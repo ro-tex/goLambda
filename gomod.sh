@@ -1,6 +1,10 @@
 #!/bin/bash
 set -eu
 
+if [ -f ./go.mod ]; then
+    exit 0 # go.mod already exists, we don't want to touch it
+fi
+
 touch go.mod
 
 PROJECT_NAME=$(basename $(pwd | xargs dirname))
