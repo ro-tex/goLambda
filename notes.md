@@ -4,3 +4,8 @@ IAM user needs the following permissions:
   - `apigateway:POST` (I used `AmazonAPIGatewayAdministrator`)
   - `iam:CreateRole` (I used `IAMFullAccess`)
   - My user also has `AWSLambdaFullAccess`
+
+## TODO
+ - JWT protection
+ - write to DynamoDB table
+ - read from DynamoDB table
