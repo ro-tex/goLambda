@@ -18,3 +18,6 @@ https://github.com/serverless/examples
 
 Invoke locally:
 `sls invoke local -f functionName`
+
+Enable .env files:
+`sls plugin install --name serverless-dotenv-plugin`

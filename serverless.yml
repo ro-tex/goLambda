@@ -27,7 +27,6 @@ provider:
   #            - "Ref" : "ServerlessDeploymentBucket"
   #            - "/*"
 
-
 package:
   exclude:
     - ./**
@@ -54,6 +53,8 @@ functions:
   #         cors: true
   docs:
     handler: bin/docs
+    environment:
+      JWT_SECRET: ${env:JWT_SECRET}
     events:
       - http:
           path: v0/docs
@@ -116,3 +117,6 @@ functions:
 #     NewOutput:
 #       Description: "Description for the output"
 #       Value: "Some output value"
+
+plugins:
+  - serverless-dotenv-plugin
