@@ -41,18 +41,29 @@ functions:
       - http:
           path: hello
           method: get
-  world:
-    handler: bin/world
+  # users:
+  #   handler: handler.main
+  #   events:
+  #     - http:
+  #         path: v1/users
+  #         method: any
+  #         cors: true
+  #     - http:
+  #         path: v1/users/{id}
+  #         method: any
+  #         cors: true
+  docs:
+    handler: bin/docs
     events:
       - http:
-          path: world
-          method: get
-  echo:
-    handler: bin/echo
-    events:
+          path: v0/docs
+          method: any
+          #cors: true
       - http:
-          path: echo
-          method: post
+          path: v0/docs/{id}
+          method: any
+          #cors: true
+
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
