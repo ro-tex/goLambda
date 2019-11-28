@@ -26,7 +26,7 @@ func getKey(_ *jwt.Token) (interface{}, error) {
 func validateJWT(token string) bool {
 	t, err := jwt.Parse(token, getKey)
 	if err != nil {
-		// TODO: Log this
+		println("Error while parsing JWT token:", err.Error())
 		return false
 	}
 	return t.Valid
